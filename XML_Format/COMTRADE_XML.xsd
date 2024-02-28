@@ -1,0 +1,302 @@
+<?xml version = "1.0"?>
+<xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+	<xsd:element name="COMTRADE">
+		<xsd:complexType>
+			<xsd:sequence>
+				<xsd:element name="RECORD">
+					<xsd:complexType>
+						<xsd:sequence>
+							<xsd:element name="CFG">
+								<xsd:complexType>
+									<xsd:sequence>
+										<xsd:element name="Station_Name">
+											<xsd:simpleType>
+												<xsd:restriction base="xsd:string">
+													<xsd:minLength value="1"/>
+													<xsd:maxLength value="64"/>
+												</xsd:restriction>
+											</xsd:simpleType>
+										</xsd:element>
+										<xsd:element name="Device_Name">
+											<xsd:simpleType>
+												<xsd:restriction base="xsd:string">
+													<xsd:minLength value="1"/>
+													<xsd:maxLength value="64"/>
+												</xsd:restriction>
+											</xsd:simpleType>
+										</xsd:element>
+										<xsd:element name="Rev_Year">
+											<xsd:simpleType>
+												<xsd:restriction base="xsd:integer">
+													<xsd:enumeration value="1991"/>
+													<xsd:enumeration value="1999"/>
+													<xsd:enumeration value="2013"/>
+												</xsd:restriction>
+											</xsd:simpleType>
+										</xsd:element>
+										<xsd:element name="Total_Channels">
+											<xsd:simpleType>
+												<xsd:restriction base="xsd:integer">
+													<xsd:minInclusive value="1"/>
+													<xsd:maxInclusive value="999999"/>
+												</xsd:restriction>
+											</xsd:simpleType>
+										</xsd:element>
+										<xsd:element name="Total_Analog_Channels">
+											<xsd:simpleType>
+												<xsd:restriction base="xsd:integer">
+													<xsd:minInclusive value="0"/>
+													<xsd:maxInclusive value="999999"/>
+												</xsd:restriction>
+											</xsd:simpleType>
+										</xsd:element>
+										<xsd:element name="Total_Digital_Channels">
+											<xsd:simpleType>
+												<xsd:restriction base="xsd:integer">
+													<xsd:minInclusive value="0"/>
+													<xsd:maxInclusive value="999999"/>
+												</xsd:restriction>
+											</xsd:simpleType>
+										</xsd:element>
+										<xsd:element name="Analog_Channels">
+											<xsd:complexType>
+												<xsd:sequence>
+													<xsd:element name="Analog_Channel">
+														<xsd:complexType>
+															<xsd:sequence>
+																<xsd:element name="Index">
+																	<xsd:simpleType>
+																		<xsd:restriction base="xsd:integer">
+																			<xsd:minInclusive value="1"/>
+																			<xsd:maxInclusive value="999999"/>
+																		</xsd:restriction>
+																	</xsd:simpleType>
+																</xsd:element>
+																<xsd:element name="ID">
+																	<xsd:simpleType>
+																		<xsd:restriction base="xsd:string">
+																			<xsd:minLength value="1"/>
+																			<xsd:maxLength value="128"/>
+																		</xsd:restriction>
+																	</xsd:simpleType>
+																</xsd:element>
+																<xsd:element name="Phase">
+																	<xsd:simpleType>
+																		<xsd:restriction base="xsd:string">
+																			<xsd:minLength value="0"/>
+																			<xsd:maxLength value="3"/>
+																		</xsd:restriction>
+																	</xsd:simpleType>
+																</xsd:element>
+																<xsd:element name="CCBM">
+																	<xsd:simpleType>
+																		<xsd:restriction base="xsd:string">
+																			<xsd:minLength value="0"/>
+																			<xsd:maxLength value="64"/>
+																		</xsd:restriction>
+																	</xsd:simpleType>
+																</xsd:element>
+																<xsd:element name="Units">
+																	<xsd:simpleType>
+																		<xsd:restriction base="xsd:string">
+																			<xsd:minLength value="1"/>
+																			<xsd:maxLength value="32"/>
+																		</xsd:restriction>
+																	</xsd:simpleType>
+																</xsd:element>
+																<xsd:element name="Multiplier" type="xsd:float" />
+																<xsd:element name="Offset" type="xsd:float" />
+																<xsd:element name="Skew" type="xsd:float" />
+																<xsd:element name="Min">
+																	<xsd:simpleType>
+																		<xsd:restriction base="xsd:float">
+																			<xsd:minInclusive value="-32768"/>
+																			<xsd:maxInclusive value="32767"/>
+																		</xsd:restriction>
+																	</xsd:simpleType>
+																</xsd:element>
+																<xsd:element name="Max" type="xsd:float" />
+																<xsd:element name="Primary_Ratio" type="xsd:float" />
+																<xsd:element name="Secondary_Ratio" type="xsd:float" />
+																<xsd:element name="Primary_or_Secondary_Indicator">
+																	<xsd:simpleType>
+																		<xsd:restriction base="xsd:string">
+																			<xsd:enumeration value="P"/>
+																			<xsd:enumeration value="S"/>
+																			<xsd:enumeration value="N"/>
+																		</xsd:restriction>
+																	</xsd:simpleType>
+																</xsd:element>
+															</xsd:sequence>
+														</xsd:complexType>
+													</xsd:element>
+												</xsd:sequence>
+											</xsd:complexType>
+										</xsd:element>
+										<xsd:element name="Digital_Channels">
+											<xsd:complexType>
+												<xsd:sequence>
+													<xsd:element name="Digital_Channel">
+														<xsd:complexType>
+															<xsd:sequence>
+																<xsd:element name="Index">
+																	<xsd:simpleType>
+																		<xsd:restriction base="xsd:integer">
+																			<xsd:minInclusive value="1"/>
+																			<xsd:maxInclusive value="999999"/>
+																		</xsd:restriction>
+																	</xsd:simpleType>
+																</xsd:element>
+																<xsd:element name="ID">
+																	<xsd:simpleType>
+																		<xsd:restriction base="xsd:string">
+																			<xsd:minLength value="1"/>
+																			<xsd:maxLength value="128"/>
+																		</xsd:restriction>
+																	</xsd:simpleType>
+																</xsd:element>
+																<xsd:element name="Phase">
+																	<xsd:simpleType>
+																		<xsd:restriction base="xsd:string">
+																			<xsd:minLength value="0"/>
+																			<xsd:maxLength value="2"/>
+																		</xsd:restriction>
+																	</xsd:simpleType>
+																</xsd:element>
+																<xsd:element name="CCBM">
+																	<xsd:simpleType>
+																		<xsd:restriction base="xsd:string">
+																			<xsd:minLength value="0"/>
+																			<xsd:maxLength value="64"/>
+																		</xsd:restriction>
+																	</xsd:simpleType>
+																</xsd:element>
+																<xsd:element name="Normal_State">
+																	<xsd:simpleType>
+																		<xsd:restriction base="xsd:integer">
+																			<xsd:enumeration value="0"/>
+																			<xsd:enumeration value="1"/>
+																		</xsd:restriction>
+																	</xsd:simpleType>
+																</xsd:element>
+															</xsd:sequence>
+														</xsd:complexType>
+													</xsd:element>
+												</xsd:sequence>
+											</xsd:complexType>
+										</xsd:element>
+										<xsd:element name="Line_Frequency" type="xsd:float" />
+										<xsd:element name="Sampling_Rate_Information">
+											<xsd:complexType>
+												<xsd:sequence>
+													<xsd:element name="Number_of_Rates">
+														<xsd:simpleType>
+															<xsd:restriction base="xsd:integer">
+																<xsd:minInclusive value="0"/>
+																<xsd:maxInclusive value="999"/>
+															</xsd:restriction>
+														</xsd:simpleType>
+													</xsd:element>
+													<xsd:element name="Sampling_Rate">
+														<xsd:complexType>
+															<xsd:sequence>
+																<xsd:element name="Rate" type="xsd:float" />
+																<xsd:element name="Last_Sample_Number" type="xsd:float" />
+															</xsd:sequence>
+														</xsd:complexType>
+													</xsd:element>
+												</xsd:sequence>
+											</xsd:complexType>
+										</xsd:element>
+										<xsd:element name="DateTime_Stamps">
+											<xsd:complexType>
+												<xsd:sequence>
+													<xsd:element name="Start_DateTime" type="xsd:string" />
+													<xsd:element name="Trigger_DateTime" type="xsd:string" />
+												</xsd:sequence>
+											</xsd:complexType>
+										</xsd:element>
+										<xsd:element name="DAT_File_Type">
+											<xsd:simpleType>
+												<xsd:restriction base="xsd:string">
+													<xsd:enumeration value="ASCII"/>
+													<xsd:enumeration value="BINARY"/>
+													<xsd:enumeration value="BINARY32"/>
+													<xsd:enumeration value="FLOAT32"/>
+												</xsd:restriction>
+											</xsd:simpleType>
+										</xsd:element>
+										<xsd:element name="Time_Stamp_Multiplication_Factor" type="xsd:float" />
+										<xsd:element name="Time_Information">
+											<xsd:complexType>
+												<xsd:sequence>
+													<xsd:element name="Time_Code">
+														<xsd:simpleType>
+															<xsd:restriction base="xsd:string">
+																<xsd:minLength value="1"/>
+																<xsd:maxLength value="6"/>
+															</xsd:restriction>
+														</xsd:simpleType>
+													</xsd:element>
+													<xsd:element name="Local_Code">
+														<xsd:simpleType>
+															<xsd:restriction base="xsd:string">
+																<xsd:minLength value="1"/>
+																<xsd:maxLength value="6"/>
+															</xsd:restriction>
+														</xsd:simpleType>
+													</xsd:element>
+												</xsd:sequence>
+											</xsd:complexType>
+										</xsd:element>
+										<xsd:element name="Time_Quality">
+											<xsd:complexType>
+												<xsd:sequence>
+													<xsd:element name="Time_Quality_Indicator_Code">
+														<xsd:simpleType>
+															<xsd:restriction base="xsd:string">
+																<xsd:enumeration value="F"/>
+																<xsd:enumeration value="B"/>
+																<xsd:enumeration value="A"/>
+																<xsd:enumeration value="9"/>
+																<xsd:enumeration value="8"/>
+																<xsd:enumeration value="7"/>
+																<xsd:enumeration value="6"/>
+																<xsd:enumeration value="5"/>
+																<xsd:enumeration value="4"/>
+																<xsd:enumeration value="3"/>
+																<xsd:enumeration value="2"/>
+																<xsd:enumeration value="1"/>
+																<xsd:enumeration value="0"/>
+															</xsd:restriction>
+														</xsd:simpleType>
+													</xsd:element>
+													<xsd:element name="Leap_Second_Indicator">
+														<xsd:simpleType>
+															<xsd:restriction base="xsd:string">
+																<xsd:enumeration value="3"/>
+																<xsd:enumeration value="2"/>
+																<xsd:enumeration value="1"/>
+																<xsd:enumeration value="0"/>
+															</xsd:restriction>
+														</xsd:simpleType>
+													</xsd:element>
+												</xsd:sequence>
+											</xsd:complexType>
+										</xsd:element>
+									</xsd:sequence>
+								</xsd:complexType>
+							</xsd:element>
+							<xsd:element name="HDR">
+							</xsd:element>
+							<xsd:element name="INF">
+							</xsd:element>
+							<xsd:element name="DAT">
+							</xsd:element>
+						</xsd:sequence>
+					</xsd:complexType>
+				</xsd:element>
+			</xsd:sequence>
+		</xsd:complexType>
+	</xsd:element>
+</xsd:schema>
